@@ -24,7 +24,8 @@ BLAST/
 ├── MajorityVote_DrugBank_to_UniProt.csv
 ├── MajorityVote_targets.fasta
 ├── MajorityVote_targets_filtered.fasta
-├── MajorityVote_targets_filtered_mapping.csv
+├── MajorityVote_filtered_drugs.csv
+├── MajorityVote_filtered_drug_to_uniprot.csv 
 ├── MajorityVote_targets_vs_ancylostoma.tsv
 ├── db/
 │   ├── ancylostoma_caninum.PRJNA72585.WBPS19.protein.fa
@@ -75,8 +76,12 @@ BLAST/
   `filter_blast_and_map_drugbank.py`.
 
 * `filter_blast_and_map_drugbank.py`
-  Filters BLAST results at a chosen e-value threshold and maps the passing
-  sequences back to DrugBank IDs.
+  Uses BLAST results (plus the target FASTA and the majority-vote DrugBank→UniProt mapping) to:
+  identify UniProt targets with at least one BLAST hit at the chosen e-value cutoff;
+  collect all DrugBank_IDs whose targets are in that set;
+  write a deduplicated list of DrugBank_IDs and a DrugBank_ID → UniProt_IDs mapping table.
+  
+  
 
 Generated intermediate and final files are described in the sections below.
 
@@ -269,7 +274,7 @@ back to its UniProt ID and DrugBank compound(s).
 
 * `MajorityVote_targets_vs_ancylostoma.tsv` – BLAST outfmt 6 results.
 * `MajorityVote_targets.fasta` – query FASTA used for BLASTP.
-* `DrugBank_Targets.csv` – to map UniProt IDs back to DrugBank IDs.
+* `MajorityVote_DrugBank_to_UniProt.csv` – to map UniProt IDs back to DrugBank IDs.
 
 ### 5.2 Command (run inside `BLAST`)
 
