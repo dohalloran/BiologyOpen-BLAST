@@ -281,10 +281,8 @@ hand or change parameters:
 python filter_blast_and_map_drugbank.py \
   --blast MajorityVote_targets_vs_ancylostoma.tsv \
   --fasta MajorityVote_targets.fasta \
-  --targets_csv DrugBank_Targets.csv \
-  --evalue_cutoff 1e-4 \
-  --out_fasta MajorityVote_targets_filtered.fasta \
-  --out_csv MajorityVote_targets_filtered_mapping.csv
+  --targets_csv MajorityVote_DrugBank_to_UniProt.csv \
+  --evalue_cutoff 1e-4
 ```
 
 To use a different e-value threshold, modify the `--evalue_cutoff` value.
