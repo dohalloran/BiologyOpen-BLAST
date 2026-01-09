@@ -1,4 +1,4 @@
-# README – From Majority-Vote DrugBank Predictions to Filtered BLAST Targets
+# Majority-Vote DrugBank Predictions to Filtered BLAST Targets
 
 This folder contains everything needed to go from a table of DrugBank majority-vote
 activity predictions to a final set of DrugBank target proteins that:
